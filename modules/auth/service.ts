@@ -14,8 +14,9 @@ const ACCESS_TOKEN_STORAGE_KEY = "accessToken";
 export const getAccessToken = (): Promise<string | null> =>
   SecureStore.getItemAsync(ACCESS_TOKEN_STORAGE_KEY);
 
-export const setAccessToken = (accessToken: string): Promise<void> =>
-  SecureStore.setItemAsync(ACCESS_TOKEN_STORAGE_KEY, accessToken);
+export const setAccessToken = (accessToken: string): Promise<void> => {
+  return SecureStore.setItemAsync(ACCESS_TOKEN_STORAGE_KEY, accessToken);
+};
 
 export const signIn = async (
   payload: SignInPayload
