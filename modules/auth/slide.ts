@@ -15,10 +15,14 @@ export const authSlice = createSlice({
   initialState,
   reducers: {
     updateAccessToken: (state, action: PayloadAction<string | null>) => {
+      console.log("payload", action.payload);
       state.accessToken = action.payload;
     },
     updateChecking: (state, action: PayloadAction<boolean>) => {
       state.checking = action.payload;
+    },
+    clearAccessToken: (state) => {
+      state.accessToken = null;
     },
   },
 });
